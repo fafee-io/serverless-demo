@@ -1,0 +1,67 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_tables
+      author: afarkas
+      changes:
+        - createSequence:
+            cacheSize: 1000
+            cycle: false
+            incrementBy: 1
+            ordered: true
+            sequenceName: id_seq
+            startValue: 100
+
+        - createTable:
+            tableName: demo_foo
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: created
+                  type: timestamp
+              - column:
+                  name: version
+                  type: bigint
+              - column:
+                  name: name
+                  type: varchar(255)
+              - column:
+                  name: enumeration
+                  type: varchar(32)
+
+        - createTable:
+            tableName: demo_bar
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: created
+                  type: timestamp
+              - column:
+                  name: version
+                  type: bigint
+              - column:
+                  name: identifier
+                  type: varchar(127)
+              - column:
+                  name: coords_x
+                  type: double
+              - column:
+                  name: coords_y
+                  type: double
+              - column:
+                  name: coords_z
+                  type: double
+              - column:
+                  name: foo_id
+                  type: bigint

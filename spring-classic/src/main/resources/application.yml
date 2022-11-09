@@ -1,0 +1,27 @@
+---
+spring:
+  application:
+    name: "spring-classic"
+  datasource:
+    url: "jdbc:mysql://serverless-mysql:3306/serverless_db"
+    username: "root"
+    password: "Almafa123"
+    driver-class-name: "com.mysql.cj.jdbc.Driver"
+  liquibase:
+    enabled: true
+    drop-first: false
+    change-log: "classpath:liquibase/init_master.yml"
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        order_inserts: true
+        jdbc:
+          batch_size: 50
+        order_updates: true
+        batch_versioned_data: true
+
+

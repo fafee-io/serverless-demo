@@ -1,0 +1,40 @@
+---
+version: "3.7"
+services:
+
+  # DATABASES
+  serverless-mysql:
+    image: bitnami/mysql:latest
+    restart: always
+    volumes:
+      - serverless-sql-data:/bitnami/mysql/data
+    ports:
+      - "127.0.0.1:3311:3306"
+    container_name: serverless-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "Almafa123"
+      MYSQL_DATABASE: "serverless_db"
+      MYSQL_CHARACTER_SET: "utf8mb4"
+      MYSQL_COLLATE: "utf8mb4_unicode_ci"
+
+  serverless-spring:
+    image: serverless-spring:0.0.1-SNAPSHOT
+    ports:
+      - "8083:8080"
+    container_name: serverless-spring
+
+  serverless-classic:
+    image: serverless-spring:classic
+    ports:
+      - "8085:8080"
+    container_name: serverless-classic
+
+  serverless-quarkus:
+    image: quarkus-demo:native
+    ports:
+      - "8087:8080"
+    container_name: serverless-quarkus
+
+volumes:
+  serverless-sql-data:
+    name: serverless-sql-data

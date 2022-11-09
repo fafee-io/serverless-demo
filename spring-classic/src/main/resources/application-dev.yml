@@ -1,0 +1,9 @@
+---
+# DEV PROFILE #
+spring:
+  datasource:
+    url: "jdbc:mysql://localhost:3311/serverless_db"
+    username: "root"
+    password: "Almafa123"
+  liquibase:
+    drop-first: true

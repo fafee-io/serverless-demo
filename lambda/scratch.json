@@ -1,0 +1,28 @@
+{
+  "FunctionName": "Lambda",
+  "FunctionArn": "arn:aws:lambda:eu-central-1:420381832982:function:Lambda",
+  "Runtime": "java11",
+  "Role": "arn:aws:iam::420381832982:role/lambda-ex",
+  "Handler": "io.quarkus.amazon.lambda.runtime.QuarkusStreamHandler::handleRequest",
+  "CodeSize": 15377477,
+  "Description": "",
+  "Timeout": 15,
+  "MemorySize": 256,
+  "LastModified": "2022-11-09T16:55:20.551+0000",
+  "CodeSha256": "eJ8gj+KQDV/aRhPPY+dElqTbM8uKFN8QJ/+zKIJSMbs=",
+  "Version": "$LATEST",
+  "TracingConfig": {
+    "Mode": "PassThrough"
+  },
+  "RevisionId": "1f14dfbc-667e-4173-ba06-ef1ea7d39242",
+  "State": "Pending",
+  "StateReason": "The function is being created.",
+  "StateReasonCode": "Creating",
+  "PackageType": "Zip",
+  "Architectures": [
+    "x86_64"
+  ],
+  "EphemeralStorage": {
+    "Size": 512
+  }
+}
